@@ -1,0 +1,121 @@
+.global-container {
+  text-align: center;
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  padding: 10px 0px;
+  gap: 20px;
+  .header-top {
+    width: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-inline: 40px;
+    img {
+      width: 100px;
+    }
+    .right-part {
+      display: flex;
+      gap: 10px;
+    }
+    .dropdown-language {
+      position: absolute;
+      right: 20px;
+      top: 50px;
+      background-color: #f6f6f6;
+      border: 1px solid grey;
+      padding: 10px;
+      width: 100px;
+      li {
+        list-style: none;
+        .locale-flag {
+          width: 30px;
+          height: 30px;
+          border-radius: 15px;
+        }
+        .locale-label {
+          color: black;
+          font-size: 15px;
+        }
+      }
+    }
+  }
+
+  .header-bottom {
+    display: flex;
+    flex-direction: row;
+    .menu-items-container {
+      .menu-button {
+        h2 {
+          padding: 0px;
+        }
+        height: 45px;
+        width: 140px;
+        font-size: 9px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 5px;
+        cursor: pointer;
+        border-top: 2px solid;
+      }
+      .menu-content {
+        position: absolute;
+        left: 0;
+        width: 100vw;
+        height: 500px;
+        display: flex;
+        flex-direction: row;
+        .left-part {
+          display: flex;
+          flex-direction: column;
+          gap: 20px;
+          width: 20%;
+          color: white;
+          padding: 20px 40px;
+          text-align: left;
+          border-right: 1px solid white;
+          p {
+            font-size: 38px;
+            font-weight: 600;
+            margin-block: 15px;
+          }
+          span {
+            font-size: 16px;
+            line-height: 24px;
+            font-weight: 600;
+          }
+          .cta-container {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+          }
+        }
+        .right-part {
+          padding: 20px 40px;
+          .submenu-container {
+            li {
+              list-style: none;
+              color: white;
+              text-align: left;
+              font-weight: 500;
+              font-size: 20px;
+              line-height: 40px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.button {
+  color: white;
+  border: none;
+  border-radius: 20px;
+  padding: 12px 14px;
+  font-weight: 600;
+  max-width: 200px;
+}

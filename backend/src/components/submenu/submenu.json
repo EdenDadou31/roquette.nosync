@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_submenu_submenus",
+  "info": {
+    "displayName": "submenu",
+    "icon": "apps",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "element": {
+      "type": "component",
+      "repeatable": false,
+      "component": "button.cta"
+    }
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "collectionName": "components_select_local_selects",
+  "info": {
+    "displayName": "localSelect",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "locale": {
+      "type": "string"
+    },
+    "code": {
+      "type": "string"
+    },
+    "flag": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    }
+  }
+}
