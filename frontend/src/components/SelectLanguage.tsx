@@ -1,40 +1,47 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import "./../styles/App.scss";
-import { getLocaleAvailable } from "../api/apiCall";
 
 interface ISelectLanguageProps {
-  language: string;
+  language: any;
   setLanguage: (locale: string) => void;
+  allLanguage: any[];
 }
 
-function SelectLanguage({ setLanguage, language }: ISelectLanguageProps) {
+function SelectLanguage({
+  setLanguage,
+  language,
+  allLanguage,
+}: ISelectLanguageProps) {
   const [isDropDownOpen, setIsDropDownOpen] = useState(false);
-  const [allLanguage, setAllLanguage] = useState<any[]>([]);
-  useEffect(() => {
-    const fetchAvailableLanguage = async () => {
-      let resultLocales = await getLocaleAvailable({ language });
-      setAllLanguage(resultLocales);
-    };
-    fetchAvailableLanguage();
-  }, [language]);
+
   return (
     <>
       <button
+        className="locale-button"
         onClick={() => setIsDropDownOpen(!isDropDownOpen)}
-        className="button"
       >
-        {language}
+        <img
+          src={`http://localhost:1337${language.flag.data.attributes.url}`}
+          className="locale-flag"
+          alt={language.locale}
+        />
+        {language.code.toUpperCase()}
       </button>
       {isDropDownOpen ? (
         <ul className="dropdown-language">
-          {allLanguage.map((locale) => (
-            <li onClick={() => setLanguage(locale.code)}>
+          {allLanguage.map((langue) => (
+            <li
+              onClick={() => {
+                setLanguage(langue);
+                setIsDropDownOpen(false);
+              }}
+            >
               <img
-                src={`http://localhost:1337${locale.flag.data.attributes.url}`}
+                src={`http://localhost:1337${langue.flag.data.attributes.url}`}
                 className="locale-flag"
-                alt={locale.label}
+                alt={langue.locale}
               />
-              <p className="locale-label">{locale.label}</p>
+              <p className="locale-label">{langue.locale}</p>
             </li>
           ))}
         </ul>
